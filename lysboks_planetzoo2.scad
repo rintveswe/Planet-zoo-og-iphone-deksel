@@ -221,7 +221,7 @@ module back_plate() {
 
 // ------------------------- Printretning (STL) -------------------------
 module front_print()   { rotate([90, 0, 0]) front_panel(); }                         // forside ned
-module body_print()    { translate([0, 0, D]) rotate([-90, 0, 0]) body(); }          // bakkant ned
+module body_print()    { translate([0, 0, body_y1]) rotate([-90, 0, 0]) body(); }          // bakkant ned
 module back_print()    { translate([0, 0, D]) rotate([-90, 0, 0]) back_plate(); }     // utside ned
 module diffuser_print(){ translate([0, 0, -face_t]) rotate([90, 0, 0]) diffuser(); }
 
