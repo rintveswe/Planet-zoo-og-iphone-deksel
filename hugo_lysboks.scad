@@ -1,6 +1,6 @@
 // =====================================================================
-//  HUGO – parametrisk lysboks med dyrepark-tema (original design)
-//  Elefant, giraff og to palmer i sirkulær ramme + «HUGO» utskåret.
+//  Parametrisk lysboks med dyrepark-tema (original design)
+//  Elefant, giraff og to palmer i sirkulær ramme (+ valgfri logo-SVG under).
 //  OpenSCAD 2021.01 eller nyere.  Alle mål i mm.
 //
 //  Del velges med  -D 'part="..."'  :
@@ -55,22 +55,20 @@ loc_z = 35;       // klossposisjon langs sidene (±)
 rib_crush = 0.2;  // press-ribbe: overlapp mot veggen
 
 // ------------------------- Motiv (frontpanel) -------------------------
-frame_cz  = 16;   // sirkelramme senter (Z)
-frame_r   = 57;   // sirkelramme ytre radius
+logo_file = "";   // sti til en SVG du har lov til å bruke (tom = ingen logo, scenen fyller panelet)
+logo_w    = 110;  // logoens bredde
+logo_z    = -58;  // logoens senter (Z) når den brukes
+big       = (logo_file == "");     // uten logo: stor scene midt på panelet
+frame_cz  = big ? 0 : 16;         // sirkelramme senter (Z)
+frame_r   = big ? 68 : 57;        // sirkelramme ytre radius
 frame_slit = 3;   // bredde på lysspalten i rammen
 frame_bridges = 6;   // antall broer over spalten
 bridge_w  = 2.4;  // bredde på broer (rammen)
-scene_r   = 52;   // motivet klippes til denne radiusen
+scene_r   = big ? 63 : 52;   // motivet klippes til denne radiusen
 ground_z  = -27;  // bakkenivå i motivet (før skalering)
-scene_sc  = 1.0;  // skalering av motivet
-scene_dz  = -5;   // forskyvning av motivet i Z (relativt sirkelsenter)
+scene_sc  = big ? 1.22 : 1.0; // skalering av motivet
+scene_dz  = big ? -6 : -5;  // forskyvning av motivet i Z (relativt sirkelsenter)
 
-text_str_z = -58; // tekstens senter (Z)
-letter_h  = 26;   // bokstavhøyde
-stroke_w  = 6.0;  // strekbredde (kraftig)
-letter_rx = 8.5;   // O/G halv bredde (midtlinje)
-letter_gap = 6;   // mellomrom mellom bokstaver
-o_bridge_w = 2.0; // bredde på broene i O
 
 // ------------------------------ Avledet -------------------------------
 $fn = 48;
@@ -97,46 +95,14 @@ module rrect(w, h, r) { offset(r = r) square([w - 2*r, h - 2*r], center = true);
 // Ekstruder 2D (x,z) fra y0 og h mm mot +Y
 module xz_extrude(y0, h) { translate([0, y0 + h, 0]) rotate([90, 0, 0]) linear_extrude(h) children(); }
 
-// ------------------------ 2D: bokstaver (HUGO) -------------------------
-LW = 2*letter_rx + stroke_w;                 // bokstavbredde
-function earc(c, rx, ry, a0, a1, n = 36) =
-    [for (i = [0:n]) let(a = a0 + (a1 - a0)*i/n) [c[0] + rx*cos(a), c[1] + ry*sin(a)]];
 module seg(a, b, w) { hull() { translate(a) circle(d = w, $fn = 24); translate(b) circle(d = w, $fn = 24); } }
 module pstroke(pts, w) { for (i = [0:len(pts) - 2]) seg(pts[i], pts[i + 1], w); }
+function earc(c, rx, ry, a0, a1, n = 36) =
+    [for (i = [0:n]) let(a = a0 + (a1 - a0)*i/n) [c[0] + rx*cos(a), c[1] + ry*sin(a)]];
 
-module letter_H() {
-    xl = stroke_w/2;  xr = LW - stroke_w/2;  z0 = stroke_w/2;  z1 = letter_h - stroke_w/2;
-    pstroke([[xl, z0], [xl, z1]], stroke_w);
-    pstroke([[xr, z0], [xr, z1]], stroke_w);
-    pstroke([[xl, letter_h/2], [xr, letter_h/2]], stroke_w);
-}
-module letter_U() {
-    xl = stroke_w/2;  xr = LW - stroke_w/2;  z1 = letter_h - stroke_w/2;
-    c = [LW/2, stroke_w/2 + letter_rx];
-    pstroke(concat([[xl, z1]], earc(c, letter_rx, letter_rx, 180, 360, 24), [[xr, z1]]), stroke_w);
-}
-function ry_() = letter_h/2 - stroke_w/2;
-module letter_G() {
-    c = [LW/2, letter_h/2];
-    pstroke(concat(earc(c, letter_rx, ry_(), 55, 350, 48), [[c[0] + 1.0, c[1] + ry_()*sin(350)]]), stroke_w);
-}
-module letter_O() {
-    c = [LW/2, letter_h/2];
-    difference() {
-        pstroke(earc(c, letter_rx, ry_(), 0, 360, 56), stroke_w);
-        // to tynne, solide broer (topp/bunn) kobler det frie midtpartiet til platen
-        for (s = [-1, 1]) translate([c[0] - o_bridge_w/2, c[1] + s*ry_() - stroke_w/2 - 0.5])
-            square([o_bridge_w, stroke_w + 1]);
-    }
-}
-module text_hugo() {
-    total = 4*LW + 3*letter_gap;
-    translate([-total/2, text_str_z - letter_h/2]) {
-        translate([0*(LW + letter_gap), 0]) letter_H();
-        translate([1*(LW + letter_gap), 0]) letter_U();
-        translate([2*(LW + letter_gap), 0]) letter_G();
-        translate([3*(LW + letter_gap), 0]) letter_O();
-    }
+// Valgfri logo (SVG) under scenen – se logo_file øverst
+module logo_slot() {
+    if (logo_file != "") translate([0, logo_z]) resize([logo_w, 0], auto = true) import(logo_file, center = true);
 }
 
 // ------------------------ 2D: dyrepark-scene --------------------------
@@ -219,7 +185,7 @@ module frame_ring() {
 // Alt som skjæres ut av frontflaten (2D i plate-koordinater)
 module front_cut2d() {
     translate([0, frame_cz]) { scene(); frame_ring(); }
-    text_hugo();
+    logo_slot();
 }
 
 // ------------------------- 2D: frontklosser ---------------------------

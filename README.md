@@ -1,9 +1,9 @@
 # HUGO – lysboks med dyrepark-tema
 
 Parametrisk, 3D-printbar lysboks (ca. **200 × 160 × 60 mm**). Frontpanelet har en egen, original silhuett
-(elefant, giraff, to palmer, sol og gresstotter) i en sirkulær ramme, og teksten **HUGO** i kraftig, avrundet
-stensil-skrift. Motivet er tegnet fra bunnen av i OpenSCAD – ingen eksisterende logo, font eller merkevare er brukt
-(bokstavene er bygget av avrundede streker, så filen trenger ingen font).
+(elefant, giraff, to palmer, sol og gresstotter) i en stor sirkulær ramme. Teksten «HUGO» er fjernet.
+Motivet er tegnet fra bunnen av i OpenSCAD. Under scenen kan du legge inn en egen logo som SVG (`logo_file` øverst i filen); da flyttes scenen opp automatisk.
+En importert logo må ha broer i lukkede former (som O) så ingen deler faller ut.
 
 ![Montert](previews/01_montert_forfra.png)
 
