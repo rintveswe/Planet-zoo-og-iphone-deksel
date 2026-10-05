@@ -3,18 +3,19 @@
 med filament-nummer (extruder) satt per objekt: 1 = svart (frontpanel), 2 = hvit (resten)."""
 import re, zipfile, numpy as np, sys
 from xml.sax.saxutils import escape
-parts = [  # fil, navn, extruder, senter (x, y) på plata
-    ("stl/lysboks_frontpanel.stl", "Frontpanel (svart)", 1, (73, 183)),
-    ("stl/lysboks_hovedkropp.stl", "Hovedkropp (hvit)", 2, (183, 183)),
-    ("stl/lysboks_bakplate.stl",   "Bakplate (hvit)",   2, (73, 73)),
-    ("stl/lysboks_diffuser.stl",   "Diffuser (hvit, 0,8 mm)", 2, (183, 73)),
+# Innstillinger pr. objekt (overstyrer prosessprofilen): infill, vegger, topp/bunn-lag
+parts = [  # fil, navn, extruder, senter (x, y) på plata, innstillinger
+    ("stl/lysboks_frontpanel.stl", "Frontpanel (svart)", 1, (73, 183),  dict(sparse_infill_density="100%", wall_loops="4", top_shell_layers="6", bottom_shell_layers="6")),
+    ("stl/lysboks_hovedkropp.stl", "Hovedkropp (hvit)", 2, (183, 183), dict(sparse_infill_density="15%",  wall_loops="3", top_shell_layers="5", bottom_shell_layers="5", sparse_infill_pattern="gyroid")),
+    ("stl/lysboks_bakplate.stl",   "Bakplate (hvit)",   2, (73, 73),   dict(sparse_infill_density="100%", wall_loops="3", top_shell_layers="6", bottom_shell_layers="6")),
+    ("stl/lysboks_diffuser.stl",   "Diffuser (hvit, 0,8 mm)", 2, (183, 73), dict(sparse_infill_density="100%", wall_loops="2", top_shell_layers="3", bottom_shell_layers="1")),
 ]
 def load(fn):
     t = np.array(re.findall(r'vertex\s+(\S+)\s+(\S+)\s+(\S+)', open(fn).read()), float).reshape(-1, 3)
     uniq, inv = np.unique(np.round(t, 5), axis=0, return_inverse=True)
     return uniq, inv.reshape(-1, 3)
 objs, build, cfg = [], [], []
-for i, (fn, name, ext, (cx, cy)) in enumerate(parts, 1):
+for i, (fn, name, ext, (cx, cy), opts) in enumerate(parts, 1):
     v, f = load(fn)
     assert abs(v[:, 2].min()) < 1e-3, fn      # ligger på plata
     c = (v[:, :2].min(0) + v[:, :2].max(0)) / 2
@@ -23,7 +24,7 @@ for i, (fn, name, ext, (cx, cy)) in enumerate(parts, 1):
     ts = ''.join(f'<triangle v1="{a}" v2="{b}" v3="{c_}"/>' for a, b, c_ in f)
     objs.append(f'<object id="{i}" name="{escape(name)}" type="model"><mesh><vertices>{vs}</vertices><triangles>{ts}</triangles></mesh></object>')
     build.append(f'<item objectid="{i}" transform="1 0 0 0 1 0 0 0 1 {cx} {cy} 0" printable="1"/>')
-    cfg.append(f'<object id="{i}"><metadata key="name" value="{escape(name)}"/><metadata key="extruder" value="{ext}"/></object>')
+    cfg.append(f'<object id="{i}"><metadata key="name" value="{escape(name)}"/><metadata key="extruder" value="{ext}"/>' + ''.join(f'<metadata key="{k}" value="{v}"/>' for k, v in opts.items()) + '</object>')
 model = ('<?xml version="1.0" encoding="UTF-8"?>\n<model unit="millimeter" xml:lang="en-US" '
          'xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02">'
          '<metadata name="Title">Lysboks Planet Zoo 2</metadata><metadata name="Application">BambuStudio</metadata>'
