@@ -13,7 +13,7 @@ big = max(sizes)
 small = [int(s) for s in sizes if s != big and s > 20]
 print('Frittflytende øyer (>20 px):', len(small))
 # tynneste solide bro: euklidsk avstandstransform
-mm_px = 200.0 / (np.ptp(np.where(dark.any(axis=0))[0]) + 1)
+mm_px = (float(sys.argv[2]) if len(sys.argv) > 2 else 100.0) / (np.ptp(np.where(dark.any(axis=0))[0]) + 1)
 dt = ndi.distance_transform_edt(dark)
 # skeleton-ish: lokale maksima av dt langs broer er vanskelig; rapporter minste «hals» via åpning
 for w in (1.2, 1.6, 2.0):
