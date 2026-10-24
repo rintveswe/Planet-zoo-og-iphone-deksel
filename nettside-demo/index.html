@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Velg design – Startsiden</title>
+  <style>
+    :root { --bg: #14151a; --card: #1d1f26; --line: #2c2f39; --ink: #f4f3ef; --muted: #a2a5b0; --acc: #ffc933; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: clamp(24px, 5vw, 56px) clamp(16px, 4vw, 40px) 64px; }
+    h1 { margin: 0 0 10px; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -.03em; }
+    .intro { margin: 0 0 clamp(24px, 4vw, 44px); color: var(--muted); max-width: 40rem; }
+    .grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; transition: transform .25s, border-color .25s; }
+    .card:hover { transform: translateY(-4px); border-color: #4a4e5c; }
+    .preview { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #fff; border-bottom: 1px solid var(--line); }
+    .preview iframe { position: absolute; border: 0; pointer-events: none; background: #fff; transform-origin: 0 0; }
+    .preview .desk { left: 0; top: 0; width: 1280px; height: 800px; }
+    .phone { position: absolute; right: 4%; bottom: -6%; width: 22%; aspect-ratio: 390 / 780; border: 4px solid #0b0b0e; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,.45); background: #fff; }
+    .phone iframe { left: 0; top: 0; width: 390px; height: 780px; }
+    .body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .label { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--acc); font-weight: 700; }
+    h2 { margin: 0; font-size: 1.6rem; letter-spacing: -.02em; }
+    .body p { margin: 0; color: var(--muted); }
+    ul { margin: 4px 0 8px; padding-left: 1.1rem; color: #d3d4da; display: grid; gap: 4px; }
+    .go { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 12px 22px; border-radius: 999px; background: var(--acc); color: #14151a; font-weight: 700; text-decoration: none; transition: transform .2s; }
+    .go:hover { transform: translateX(4px); }
+    .go:focus-visible, .preview:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+    .tip { margin-top: 28px; color: var(--muted); font-size: .92rem; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Velg designretning for <span data-brand>Startsiden</span></h1>
+    <p class="intro">To helt ulike varianter av samme nettside, med likt innhold. Klikk deg inn i begge, og bruk den lille bryteren nede i hjørnet for å hoppe fram og tilbake.</p>
+
+    <div class="grid">
+      <article class="card">
+        <a class="preview" href="kreativ/index.html" aria-label="Åpne kreativ variant" data-preview>
+          <iframe class="desk" src="kreativ/index.html" title="Forhåndsvisning: kreativ variant" tabindex="-1" loading="lazy"></iframe>
+          <span class="phone"><iframe src="kreativ/index.html" title="Mobilvisning: kreativ variant" tabindex="-1" loading="lazy"></iframe></span>
+        </a>
+        <div class="body">
+          <span class="label">Variant 1</span>
+          <h2>Kreativ</h2>
+          <p>«Fra blank side til ferdig merkevare». Siden bygger seg selv mens du scroller, og du kan teste logostiler med eget bedriftsnavn.</p>
+          <ul>
+            <li>Interaktiv logo-lekeplass</li>
+            <li>Wireframes som blir til ferdige sider</li>
+            <li>Egen cursor, dristig typografi og fargepalett</li>
+          </ul>
+          <a class="go" href="kreativ/index.html">Åpne kreativ →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="preview" href="praktisk/index.html" aria-label="Åpne praktisk variant" data-preview>
+          <iframe class="desk" src="praktisk/index.html" title="Forhåndsvisning: praktisk variant" tabindex="-1" loading="lazy"></iframe>
+          <span class="phone"><iframe src="praktisk/index.html" title="Mobilvisning: praktisk variant" tabindex="-1" loading="lazy"></iframe></span>
+        </a>
+        <div class="body">
+          <span class="label">Variant 2</span>
+          <h2>Praktisk og stilig</h2>
+          <p>Skandinavisk, rolig og tillitvekkende. Mye luft, sterk typografi, én aksentfarge og subtile animasjoner.</p>
+          <ul>
+            <li>Tydelige priser og enkel kontakt</li>
+            <li>Rolig, ryddig og lett å skanne på mobil</li>
+            <li>Passer for håndverkere, frisører og kafeer</li>
+          </ul>
+          <a class="go" href="praktisk/index.html">Åpne praktisk →</a>
+        </div>
+      </article>
+    </div>
+    <p class="tip">Firmanavn, e-post og alle priser endres ett sted: <code>felles/felles.js</code>.</p>
+  </div>
+
+  <script src="felles/felles.js"></script>
+  <script>
+    // Skalerer iframene slik at hele skrivebords- og mobilvisningen passer i forhåndsvisningen.
+    (function () {
+      function fit() {
+        document.querySelectorAll("[data-preview]").forEach(function (p) {
+          var desk = p.querySelector(".desk"), phone = p.querySelector(".phone"), pf = phone.querySelector("iframe");
+          desk.style.transform = "scale(" + p.clientWidth / 1280 + ")";
+          pf.style.transform = "scale(" + phone.clientWidth / 390 + ")";
+        });
+      }
+      fit();
+      window.addEventListener("resize", fit);
+      if ("ResizeObserver" in window) {
+        var ro = new ResizeObserver(fit);
+        document.querySelectorAll("[data-preview]").forEach(function (p) { ro.observe(p); });
+      }
+    })();
+  </script>
+</body>
+</html>

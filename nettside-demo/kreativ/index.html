@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="nb" data-variant="kreativ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Startsiden – hjemmeside og logo til nye bedrifter</title>
+  <meta name="description" content="Profesjonell hjemmeside og logo til nystartede bedrifter i Norge. Raskt, og til fast pris.">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Pacifico&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../felles/mockups.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#innhold">Hopp til innhold</a>
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+  <div class="stage" aria-hidden="true" id="stageChip"><span class="dot"></span><span id="stageText">01 · Blank side</span></div>
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#top" aria-label="Til toppen">
+        <span class="brand-mark" aria-hidden="true"></span><span data-brand>Startsiden</span>
+      </a>
+      <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Meny"><span></span><span></span></button>
+      <nav class="nav" id="nav" aria-label="Hovedmeny">
+        <a href="#tjenester">Tjenester</a>
+        <a href="#priser">Priser</a>
+        <a href="#slik">Slik jobber vi</a>
+        <a href="#eksempler">Eksempler</a>
+        <a href="#faq">Spørsmål</a>
+        <a class="btn small" href="#kontakt" data-magnet>Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="innhold">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="guides" aria-hidden="true"><i class="gx"></i><i class="gy"></i><span class="gl">x 0 · y 0</span></div>
+      <div class="shapes" aria-hidden="true">
+        <div class="sh sh1" data-depth="1.4"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#12110F" stroke-width="2" stroke-dasharray="6 6"/></svg></div>
+        <div class="sh sh2" data-depth="-1"><svg viewBox="0 0 100 100"><rect x="12" y="12" width="76" height="76" fill="#FFC933" stroke="#12110F" stroke-width="3"/></svg></div>
+        <div class="sh sh3" data-depth="2"><svg viewBox="0 0 100 100"><path d="M50 8 94 88H6z" fill="#2F3BFF"/></svg></div>
+      </div>
+
+      <div class="wrap">
+        <p class="eyebrow mono">Hjemmeside + logo · fast pris · for nye bedrifter</p>
+        <h1>
+          Fra <span class="blank">blank side</span><br>
+          til <span class="ferdig">ferdig merkevare.</span>
+        </h1>
+        <p class="lead">Du har en idé og et firma på vei. Vi lager hjemmesiden og logoen som gjør at kundene tar deg på alvor – raskt, og til en pris du kjenner på forhånd.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#priser" data-magnet>Se priser</a>
+          <a class="btn ghost" href="#kontakt" data-magnet>Ta kontakt</a>
+        </div>
+
+        <!-- Interaktiv logo-lekeplass -->
+        <div class="lab" id="lab">
+          <div class="lab-head">
+            <label class="mono" for="navn">① Skriv bedriftsnavnet ditt</label>
+            <div class="lab-input">
+              <input id="navn" type="text" value="Fjellvik Bygg" maxlength="32" autocomplete="off" spellcheck="false" aria-describedby="labHint">
+              <button class="btn small ghost" type="button" id="shuffle">↻ Nye farger</button>
+            </div>
+            <div class="chips" aria-label="Eksempelnavn">
+              <button type="button" class="chip" data-navn="Salong Lykke">Salong Lykke</button>
+              <button type="button" class="chip" data-navn="Hansen Rør">Hansen Rør</button>
+              <button type="button" class="chip" data-navn="Kaffekroken">Kaffekroken</button>
+              <button type="button" class="chip" data-navn="Tre &amp; Tak">Tre &amp; Tak</button>
+            </div>
+          </div>
+
+          <div class="logos" id="logos" aria-live="polite">
+            <article class="logo-card">
+              <div class="logo-art s1" role="img" aria-label="Logoforslag i stilen Klassisk">
+                <span class="l1-rule"></span>
+                <span class="l1-name js-name">Fjellvik Bygg</span>
+                <span class="l1-sub">EST. <span data-year>2025</span></span>
+              </div>
+              <div class="logo-foot"><span class="mono">01 · Klassisk</span><button type="button" class="chip" data-pick="Klassisk">Velg denne →</button></div>
+            </article>
+            <article class="logo-card">
+              <div class="logo-art s2" role="img" aria-label="Logoforslag i stilen Stempel">
+                <span class="l2-badge"><span class="l2-name js-name">Fjellvik Bygg</span></span>
+              </div>
+              <div class="logo-foot"><span class="mono">02 · Stempel</span><button type="button" class="chip" data-pick="Stempel">Velg denne →</button></div>
+            </article>
+            <article class="logo-card">
+              <div class="logo-art s3" role="img" aria-label="Logoforslag i stilen Håndskrift">
+                <span class="l3-name js-name">Fjellvik Bygg</span>
+                <svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11C40 2 70 15 110 8s60 2 87 3" pathLength="1"/></svg>
+              </div>
+              <div class="logo-foot"><span class="mono">03 · Håndskrift</span><button type="button" class="chip" data-pick="Håndskrift">Velg denne →</button></div>
+            </article>
+            <article class="logo-card">
+              <div class="logo-art s4" role="img" aria-label="Logoforslag i stilen Monogram">
+                <span class="l4-mark js-init">F</span>
+                <span class="l4-name js-name">Fjellvik Bygg</span>
+              </div>
+              <div class="logo-foot"><span class="mono">04 · Monogram</span><button type="button" class="chip" data-pick="Monogram">Velg denne →</button></div>
+            </article>
+          </div>
+          <p class="lab-note" id="labHint">② Dette er bare en rask forsmak. Ditt endelige logoforslag tegnes tilpasset bransjen din.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Hjemmeside</span><span>✺</span><span>Logo</span><span>✺</span><span>Fast pris</span><span>✺</span><span>Mobilvennlig</span><span>✺</span><span>For nye bedrifter</span><span>✺</span>
+        <span>Hjemmeside</span><span>✺</span><span>Logo</span><span>✺</span><span>Fast pris</span><span>✺</span><span>Mobilvennlig</span><span>✺</span><span>For nye bedrifter</span><span>✺</span>
+      </div>
+    </div>
+
+    <!-- ================= TJENESTER ================= -->
+    <section class="sec" id="tjenester">
+      <div class="wrap">
+        <header class="sec-head" data-build>
+          <p class="tag mono">[ 01 / Tjenester ]</p>
+          <h2>Tre måter å komme i gang på.</h2>
+        </header>
+        <div class="cards3">
+          <article class="card blue" data-build>
+            <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="10" width="52" height="44" rx="4"/><path d="M6 22h52M14 16h.01M20 16h.01M16 32h20M16 40h14M44 32h6v14h-6z"/></svg>
+            <h3>Hjemmeside</h3>
+            <p>En ryddig, rask side som ser bra ut på mobil. Med kontaktskjema og det kundene dine faktisk leter etter.</p>
+            <p class="from"><span class="mono">fra</span> <strong><span data-pris="hjemmeside">2 000</span> kr</strong></p>
+            <a class="more" href="#priser">Se hva som er med →</a>
+          </article>
+          <article class="card red" data-build>
+            <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="M20 40 32 16l12 24M24 33h16"/></svg>
+            <h3>Logo</h3>
+            <p>Et logo som er ditt – med ferdige filer til skilt, bil, nett og visittkort.</p>
+            <p class="from"><span class="mono">fra</span> <strong><span data-pris="logo">1 000</span> kr</strong></p>
+            <a class="more" href="#priser">Se hva som er med →</a>
+          </article>
+          <article class="card sun" data-build>
+            <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="12" width="40" height="32" rx="4"/><circle cx="44" cy="40" r="14"/><path d="M4 22h40"/></svg>
+            <h3>Pakke</h3>
+            <p>Hjemmeside og logo i ett, med samme uttrykk fra første dag. Billigere enn å kjøpe hver for seg.</p>
+            <p class="from"><span class="mono">fra</span> <strong><span data-pris="pakke">2 400</span> kr</strong></p>
+            <a class="more" href="#priser">Se hva som er med →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRISER ================= -->
+    <!-- ⚠️ ALLE PRISER ER PLASSHOLDERE. Endre dem i ../felles/felles.js (SITE.priser). Innholdet i pakkene er også kun eksempel. -->
+    <section class="sec sec-prices" id="priser">
+      <div class="wrap">
+        <header class="sec-head" data-build>
+          <p class="tag mono">[ 02 / Priser ]</p>
+          <h2>Fast pris. Ingen overraskelser.</h2>
+          <p class="sub">Prisene under er veiledende fra-priser. Du får et fast tilbud før vi starter.</p>
+        </header>
+        <div class="price-grid">
+          <article class="price" data-build>
+            <h3>Hjemmeside</h3>
+            <p class="amount"><span class="mono">fra</span> <strong><span data-pris="hjemmeside">2 000</span></strong> <span class="kr">kr</span></p>
+            <ul>
+              <li>Inntil 5 sider</li>
+              <li>Tilpasset mobil og nettbrett</li>
+              <li>Kontaktskjema</li>
+              <li>Grunnleggende oppsett for å bli funnet på Google</li>
+            </ul>
+            <a class="btn" href="#kontakt" data-velg="Hjemmeside" data-magnet>Jeg vil ha hjemmeside</a>
+          </article>
+          <article class="price" data-build>
+            <h3>Logo</h3>
+            <p class="amount"><span class="mono">fra</span> <strong><span data-pris="logo">1 000</span></strong> <span class="kr">kr</span></p>
+            <ul>
+              <li>2 forslag å velge mellom</li>
+              <li>1 runde med justeringer</li>
+              <li>Filer til nett og trykk</li>
+              <li>Fargepalett og skrifttyper</li>
+            </ul>
+            <a class="btn" href="#kontakt" data-velg="Logo" data-magnet>Jeg vil ha logo</a>
+          </article>
+          <article class="price feat" data-build>
+            <span class="sticker">Spar <span data-pris="pakkeSpar">600</span> kr</span>
+            <h3>Pakke</h3>
+            <p class="amount"><span class="mono">fra</span> <strong><span data-pris="pakke">2 400</span></strong> <span class="kr">kr</span></p>
+            <ul>
+              <li>Hjemmeside + logo</li>
+              <li>Samme uttrykk overalt</li>
+              <li>Alt fra begge pakkene</li>
+              <li>Én kontaktperson hele veien</li>
+            </ul>
+            <a class="btn yellow" href="#kontakt" data-velg="Pakke (hjemmeside + logo)" data-magnet>Jeg vil ha pakken</a>
+          </article>
+        </div>
+
+        <aside class="abo" data-build>
+          <div>
+            <p class="tag mono">Valgfritt tillegg</p>
+            <h3>Oppdateringer og drift</h3>
+            <p>Vi tar oss av hosting, sikkerhet og små endringer, så du kan bruke tiden på kundene dine.</p>
+          </div>
+          <p class="abo-price"><strong><span data-pris="abonnement">299</span></strong> kr<span class="mono">/mnd</span></p>
+        </aside>
+        <p class="fine">Domene og eventuelle eksterne tjenester kommer i tillegg. Alle priser er plassholdere i denne demoen.</p>
+      </div>
+    </section>
+
+    <!-- ================= SLIK JOBBER VI ================= -->
+    <section class="sec" id="slik">
+      <div class="wrap">
+        <header class="sec-head" data-build>
+          <p class="tag mono">[ 03 / Slik jobber vi ]</p>
+          <h2>Fire steg fra «hei» til ferdig.</h2>
+        </header>
+        <ol class="steps">
+          <li data-build style="--c:var(--blue)"><span class="num">1</span><p class="mono st">blank side</p><h3>Vi snakkes</h3><p>Du forteller om bedriften, kundene dine og hva du trenger. Så får du et fast tilbud.</p></li>
+          <li data-build style="--c:var(--red)"><span class="num">2</span><p class="mono st">skisse</p><h3>Vi skisserer</h3><p>Du får forslag til logo og oppsett på siden, og sier hva du liker og ikke liker.</p></li>
+          <li data-build style="--c:var(--sun)"><span class="num">3</span><p class="mono st">wireframe → design</p><h3>Vi bygger</h3><p>Vi bygger siden, fyller den med innholdet ditt og finpusser sammen med deg.</p></li>
+          <li data-build style="--c:var(--mint)"><span class="num">4</span><p class="mono st">ferdig merkevare</p><h3>Du lanserer</h3><p>Siden legges ut, logoen leveres, og du får en kort gjennomgang av hvordan alt henger sammen.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= EKSEMPLER ================= -->
+    <section class="sec" id="eksempler">
+      <div class="wrap">
+        <header class="sec-head" data-build>
+          <p class="tag mono">[ 04 / Eksempler ]</p>
+          <h2>Se skissen bli til ferdig side.</h2>
+          <p class="sub">Fiktive bedrifter laget for å vise stilen vår. Scroll sakte og se wireframen fylles med farge.</p>
+        </header>
+        <div class="examples">
+          <figure class="ex" data-build>
+            <div class="ex-frame"><span class="mk-tag">Eksempel</span><div data-mock="frisor" data-wire></div></div>
+            <figcaption><b>Frisør</b><span>Fiktiv kunde</span></figcaption>
+          </figure>
+          <figure class="ex" data-build>
+            <div class="ex-frame"><span class="mk-tag">Eksempel</span><div data-mock="rorlegger" data-wire></div></div>
+            <figcaption><b>Rørlegger</b><span>Fiktiv kunde</span></figcaption>
+          </figure>
+          <figure class="ex" data-build>
+            <div class="ex-frame"><span class="mk-tag">Eksempel</span><div data-mock="kafe" data-wire></div></div>
+            <figcaption><b>Kafé</b><span>Fiktiv kunde</span></figcaption>
+          </figure>
+          <figure class="ex" data-build>
+            <div class="ex-frame"><span class="mk-tag">Eksempel</span><div data-mock="snekker" data-wire></div></div>
+            <figcaption><b>Snekker</b><span>Fiktiv kunde</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <!-- Svarene er plassholdere – tilpass dem til hvordan du faktisk jobber. -->
+    <section class="sec" id="faq">
+      <div class="wrap narrow">
+        <header class="sec-head" data-build>
+          <p class="tag mono">[ 05 / Spørsmål ]</p>
+          <h2>Vanlige spørsmål.</h2>
+        </header>
+        <div class="faq" data-build>
+          <details><summary>Hvor lang tid tar det?</summary><p>Det avhenger av hvor raskt du leverer tekst og bilder, men en enkel side er typisk klar på 1–2 uker.</p></details>
+          <details><summary>Hva må jeg levere selv?</summary><p>Litt tekst om bedriften, kontaktinfo og gjerne noen bilder. Har du ikke bilder eller tekst, hjelper vi deg å komme i gang.</p></details>
+          <details><summary>Hva med domene og hosting?</summary><p>Vi hjelper deg å velge og sette opp domene (f.eks. dittfirma.no) og hosting. Disse kostnadene kommer i tillegg til prisen, eller er med i månedsabonnementet.</p></details>
+          <details><summary>Eier jeg siden og logoen selv?</summary><p>Ja. Du får filene og rettighetene til det som er laget for deg, når det er betalt.</p></details>
+          <details><summary>Kan jeg endre ting etterpå?</summary><p>Ja. Enten tar vi oss av endringene gjennom månedsabonnementet, eller du betaler for hver endring.</p></details>
+          <details><summary>Hva om jeg ikke liker forslaget?</summary><p>Du får justere underveis. Vi starter med skisser nettopp for å treffe riktig før vi bygger.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KONTAKT ================= -->
+    <section class="sec sec-contact" id="kontakt">
+      <div class="wrap contact">
+        <div data-build>
+          <p class="tag mono">[ 06 / Kontakt ]</p>
+          <h2>Skal vi lage noe sammen?</h2>
+          <p class="sub">Fortell kort hva du trenger, så kommer vi tilbake med et fast tilbud.</p>
+          <p class="mailto"><a data-epost href="mailto:hei@startsiden.example">hei@startsiden.example</a></p>
+        </div>
+
+        <div class="form-card" data-build>
+          <!-- KOBLE TIL FORMSPREE SENERE:
+               1) Lag et skjema på formspree.io og kopier endepunktet (https://formspree.io/f/DIN_ID).
+               2) Sett action="https://formspree.io/f/DIN_ID" method="POST" på <form> under.
+               3) I script.js: fjern e.preventDefault() i submit-håndtereren, eller bruk fetch-eksempelet der. -->
+          <form id="contactForm">
+            <div class="field"><label for="f-navn">Navn</label><input id="f-navn" name="navn" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-bedrift">Bedrift</label><input id="f-bedrift" name="bedrift" type="text" autocomplete="organization"></div>
+            <div class="field"><label for="f-epost">E-post</label><input id="f-epost" name="epost" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-behov">Hva trenger du?</label>
+              <select id="f-behov" name="behov">
+                <option>Hjemmeside</option>
+                <option>Logo</option>
+                <option>Pakke (hjemmeside + logo)</option>
+                <option>Vet ikke ennå</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-melding">Noe mer vi bør vite? <span class="opt">(valgfritt)</span></label><textarea id="f-melding" name="melding" rows="4"></textarea></div>
+            <button class="btn" type="submit" data-magnet>Send henvendelse</button>
+          </form>
+          <div class="thanks" id="thanks" hidden tabindex="-1" role="status">
+            <div class="thanks-ico" aria-hidden="true">✓</div>
+            <h3>Takk! Vi har mottatt henvendelsen.</h3>
+            <p>Vi tar kontakt så snart vi kan. (Demo: skjemaet er ikke koblet til noen tjeneste ennå.)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <p class="foot-brand" data-brand>Startsiden</p>
+      <p class="mono">© <span data-year>2025</span> <span data-brand>Startsiden</span> · Org.nr. [legges til] · Eksemplene er fiktive.</p>
+    </div>
+  </footer>
+
+  <script src="../felles/felles.js"></script>
+  <script src="../felles/mockups.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

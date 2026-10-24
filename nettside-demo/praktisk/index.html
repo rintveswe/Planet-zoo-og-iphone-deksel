@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="nb" data-variant="praktisk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Startsiden – hjemmeside og logo til nye bedrifter</title>
+  <meta name="description" content="Profesjonell hjemmeside og logo til nystartede bedrifter i Norge. Raskt, og til fast pris.">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../felles/mockups.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#innhold">Hopp til innhold</a>
+
+  <header class="top" id="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span><span data-brand>Startsiden</span></a>
+      <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Meny"><span></span><span></span></button>
+      <nav class="nav" id="nav" aria-label="Hovedmeny">
+        <a href="#tjenester">Tjenester</a>
+        <a href="#priser">Priser</a>
+        <a href="#slik">Slik jobber vi</a>
+        <a href="#eksempler">Eksempler</a>
+        <a href="#faq">Spørsmål</a>
+        <a class="btn primary small" href="#kontakt">Be om tilbud</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="innhold">
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow rv">For nystartede bedrifter i Norge</p>
+          <h1 class="rv" style="--d:1">Hjemmeside og logo til din nye bedrift. <span>Raskt, og til fast pris.</span></h1>
+          <p class="lead rv" style="--d:2">Du skal drive bedriften din, ikke bygge nettsider. Vi tar oss av hjemmeside og logo, og du vet hva det koster før vi begynner.</p>
+          <div class="cta-row rv" style="--d:3">
+            <a class="btn primary" href="#priser">Se priser</a>
+            <a class="btn" href="#kontakt">Be om tilbud</a>
+          </div>
+          <ul class="checks rv" style="--d:4">
+            <li>Fast pris – ingen overraskelser</li>
+            <li>Ser bra ut på mobil</li>
+            <li>Enkelt språk, ingen fagsnakk</li>
+          </ul>
+        </div>
+        <div class="hero-visual rv" style="--d:2" aria-hidden="true">
+          <div data-mock="kafe"></div>
+          <span class="mk-tag">Eksempel</span>
+          <div class="float-logo">
+            <span class="fl-mark">K</span>
+            <span><b>Kaffekroken</b><small>Eksempel på logo</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TJENESTER ================= -->
+    <section class="sec" id="tjenester">
+      <div class="wrap">
+        <header class="sec-head rv">
+          <p class="eyebrow">Tjenester</p>
+          <h2>Det du trenger for å se etablert ut.</h2>
+          <p class="sub">Velg det du trenger nå. Du kan alltid bygge på senere.</p>
+        </header>
+        <div class="grid3">
+          <article class="svc rv">
+            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="38" height="32" rx="3"/><path d="M5 16h38M10 12h.01M15 12h.01M12 24h14M12 30h9M32 24h5v10h-5z"/></svg>
+            <h3>Hjemmeside</h3>
+            <p>En ryddig og rask side som presenterer bedriften din, og gjør det enkelt for kunder å ta kontakt.</p>
+            <p class="from">fra <strong><span data-pris="hjemmeside">2 000</span> kr</strong></p>
+            <a class="link" href="#priser">Se hva som er med</a>
+          </article>
+          <article class="svc rv" style="--d:1">
+            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M15 31 24 12l9 19M18 26h12"/></svg>
+            <h3>Logo</h3>
+            <p>Et enkelt og gjenkjennelig logo med filer du kan bruke på skilt, bil, nett og visittkort.</p>
+            <p class="from">fra <strong><span data-pris="logo">1 000</span> kr</strong></p>
+            <a class="link" href="#priser">Se hva som er med</a>
+          </article>
+          <article class="svc rv" style="--d:2">
+            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="30" height="24" rx="3"/><circle cx="33" cy="31" r="11"/><path d="M4 16h30"/></svg>
+            <h3>Pakke</h3>
+            <p>Hjemmeside og logo sammen, med felles uttrykk. Rimeligere enn å kjøpe hver for seg.</p>
+            <p class="from">fra <strong><span data-pris="pakke">2 400</span> kr</strong></p>
+            <a class="link" href="#priser">Se hva som er med</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRISER ================= -->
+    <!-- ⚠️ ALLE PRISER ER PLASSHOLDERE. Endre dem i ../felles/felles.js (SITE.priser). Innholdet i pakkene er også kun eksempel. -->
+    <section class="sec tint" id="priser">
+      <div class="wrap">
+        <header class="sec-head rv">
+          <p class="eyebrow">Priser</p>
+          <h2>Fast pris, uten skjulte kostnader.</h2>
+          <p class="sub">Prisene under er veiledende fra-priser. Du får et fast tilbud før vi starter.</p>
+        </header>
+        <div class="grid3 prices">
+          <article class="plan rv">
+            <h3>Hjemmeside</h3>
+            <p class="amount"><span>fra</span> <strong data-pris="hjemmeside">2 000</strong> <span>kr</span></p>
+            <ul>
+              <li>Inntil 5 sider</li>
+              <li>Tilpasset mobil og nettbrett</li>
+              <li>Kontaktskjema</li>
+              <li>Grunnleggende oppsett for å bli funnet på Google</li>
+            </ul>
+            <a class="btn" href="#kontakt" data-velg="Hjemmeside">Be om tilbud</a>
+          </article>
+          <article class="plan rv" style="--d:1">
+            <h3>Logo</h3>
+            <p class="amount"><span>fra</span> <strong data-pris="logo">1 000</strong> <span>kr</span></p>
+            <ul>
+              <li>2 forslag å velge mellom</li>
+              <li>1 runde med justeringer</li>
+              <li>Filer til nett og trykk</li>
+              <li>Fargepalett og skrifttyper</li>
+            </ul>
+            <a class="btn" href="#kontakt" data-velg="Logo">Be om tilbud</a>
+          </article>
+          <article class="plan best rv" style="--d:2">
+            <span class="badge">Best verdi · spar <span data-pris="pakkeSpar">600</span> kr</span>
+            <h3>Pakke</h3>
+            <p class="amount"><span>fra</span> <strong data-pris="pakke">2 400</strong> <span>kr</span></p>
+            <ul>
+              <li>Hjemmeside + logo</li>
+              <li>Samme uttrykk overalt</li>
+              <li>Alt fra begge pakkene</li>
+              <li>Én kontaktperson hele veien</li>
+            </ul>
+            <a class="btn primary" href="#kontakt" data-velg="Pakke (hjemmeside + logo)">Be om tilbud</a>
+          </article>
+        </div>
+
+        <aside class="abo rv">
+          <div>
+            <p class="eyebrow">Valgfritt tillegg</p>
+            <h3>Oppdateringer og drift</h3>
+            <p>Vi tar oss av hosting, sikkerhet og små endringer, så du kan bruke tiden på kundene dine. Ingen bindingstid i denne demoen.</p>
+          </div>
+          <p class="abo-price"><strong data-pris="abonnement">299</strong> kr<span>/mnd</span></p>
+        </aside>
+        <p class="fine">Domene og eventuelle eksterne tjenester kommer i tillegg. Alle priser er plassholdere i denne demoen.</p>
+      </div>
+    </section>
+
+    <!-- ================= SLIK JOBBER VI ================= -->
+    <section class="sec" id="slik">
+      <div class="wrap">
+        <header class="sec-head rv">
+          <p class="eyebrow">Slik jobber vi</p>
+          <h2>Fire enkle steg fra første kontakt til ferdig side.</h2>
+        </header>
+        <ol class="steps">
+          <li class="rv"><span class="num">1</span><h3>Vi snakkes</h3><p>Du forteller om bedriften og hva du trenger. Du får et fast tilbud.</p></li>
+          <li class="rv" style="--d:1"><span class="num">2</span><h3>Vi skisserer</h3><p>Du får forslag til logo og oppsett på siden, og kommer med tilbakemeldinger.</p></li>
+          <li class="rv" style="--d:2"><span class="num">3</span><h3>Vi bygger</h3><p>Vi lager siden, legger inn innholdet ditt og finpusser sammen med deg.</p></li>
+          <li class="rv" style="--d:3"><span class="num">4</span><h3>Du lanserer</h3><p>Siden går live, logoen leveres, og du får en kort gjennomgang.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= EKSEMPLER ================= -->
+    <section class="sec tint" id="eksempler">
+      <div class="wrap">
+        <header class="sec-head rv">
+          <p class="eyebrow">Eksempler</p>
+          <h2>Slik kan det se ut.</h2>
+          <p class="sub">Fiktive bedrifter, laget for å vise stilen vår.</p>
+        </header>
+        <div class="examples">
+          <figure class="ex rv"><div class="ex-frame"><span class="mk-tag">Eksempel</span><div data-mock="frisor"></div></div><figcaption><b>Frisør</b><span>Fiktiv kunde</span></figcaption></figure>
+          <figure class="ex rv" style="--d:1"><div class="ex-frame"><span class="mk-tag">Eksempel</span><div data-mock="rorlegger"></div></div><figcaption><b>Rørlegger</b><span>Fiktiv kunde</span></figcaption></figure>
+          <figure class="ex rv"><div class="ex-frame"><span class="mk-tag">Eksempel</span><div data-mock="kafe"></div></div><figcaption><b>Kafé</b><span>Fiktiv kunde</span></figcaption></figure>
+          <figure class="ex rv" style="--d:1"><div class="ex-frame"><span class="mk-tag">Eksempel</span><div data-mock="snekker"></div></div><figcaption><b>Snekker</b><span>Fiktiv kunde</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <!-- Svarene er plassholdere – tilpass dem til hvordan du faktisk jobber. -->
+    <section class="sec" id="faq">
+      <div class="wrap narrow">
+        <header class="sec-head rv">
+          <p class="eyebrow">Vanlige spørsmål</p>
+          <h2>Svar på det de fleste lurer på.</h2>
+        </header>
+        <div class="faq rv">
+          <details><summary>Hvor lang tid tar det?</summary><p>Det avhenger av hvor raskt du leverer tekst og bilder, men en enkel side er typisk klar på 1–2 uker.</p></details>
+          <details><summary>Hva må jeg levere selv?</summary><p>Litt tekst om bedriften, kontaktinfo og gjerne noen bilder. Har du ikke bilder eller tekst, hjelper vi deg å komme i gang.</p></details>
+          <details><summary>Hva med domene og hosting?</summary><p>Vi hjelper deg å velge og sette opp domene (f.eks. dittfirma.no) og hosting. Disse kostnadene kommer i tillegg til prisen, eller er med i månedsabonnementet.</p></details>
+          <details><summary>Eier jeg siden og logoen selv?</summary><p>Ja. Du får filene og rettighetene til det som er laget for deg, når det er betalt.</p></details>
+          <details><summary>Kan jeg endre ting etterpå?</summary><p>Ja. Enten tar vi oss av endringene gjennom månedsabonnementet, eller du betaler for hver endring.</p></details>
+          <details><summary>Hva om jeg ikke liker forslaget?</summary><p>Du får justere underveis. Vi starter med skisser nettopp for å treffe riktig før vi bygger.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KONTAKT ================= -->
+    <section class="sec tint" id="kontakt">
+      <div class="wrap contact">
+        <div class="rv">
+          <p class="eyebrow">Kontakt</p>
+          <h2>La oss høre om bedriften din.</h2>
+          <p class="sub">Fortell kort hva du trenger, så kommer vi tilbake med et fast tilbud.</p>
+          <p class="mailto">Eller send e-post:<br><a data-epost href="mailto:hei@startsiden.example">hei@startsiden.example</a></p>
+        </div>
+
+        <div class="form-card rv" style="--d:1">
+          <!-- KOBLE TIL FORMSPREE SENERE:
+               1) Lag et skjema på formspree.io og kopier endepunktet (https://formspree.io/f/DIN_ID).
+               2) Sett action="https://formspree.io/f/DIN_ID" method="POST" på <form> under.
+               3) I script.js: fjern e.preventDefault() i submit-håndtereren, eller bruk fetch-eksempelet der. -->
+          <form id="contactForm">
+            <div class="field"><label for="f-navn">Navn</label><input id="f-navn" name="navn" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-bedrift">Bedrift</label><input id="f-bedrift" name="bedrift" type="text" autocomplete="organization"></div>
+            <div class="field"><label for="f-epost">E-post</label><input id="f-epost" name="epost" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-behov">Hva trenger du?</label>
+              <select id="f-behov" name="behov">
+                <option>Hjemmeside</option>
+                <option>Logo</option>
+                <option>Pakke (hjemmeside + logo)</option>
+                <option>Vet ikke ennå</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-melding">Noe mer vi bør vite? <span class="opt">(valgfritt)</span></label><textarea id="f-melding" name="melding" rows="4"></textarea></div>
+            <button class="btn primary block" type="submit">Send henvendelse</button>
+          </form>
+          <div class="thanks" id="thanks" hidden tabindex="-1" role="status">
+            <div class="thanks-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+            <h3>Takk! Vi har mottatt henvendelsen.</h3>
+            <p>Vi tar kontakt så snart vi kan. (Demo: skjemaet er ikke koblet til noen tjeneste ennå.)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span><span data-brand>Startsiden</span></a>
+      <p>© <span data-year>2025</span> <span data-brand>Startsiden</span> · Org.nr. [legges til] · Eksemplene på siden er fiktive.</p>
+    </div>
+  </footer>
+
+  <script src="../felles/felles.js"></script>
+  <script src="../felles/mockups.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

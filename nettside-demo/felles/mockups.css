@@ -1,0 +1,92 @@
+/* Delte mockups av fiktive kunder ("Eksempel"). Alt er CSS/SVG, ingen bilder.
+   Størrelsene bruker container-enheter (cqw), så mockupen skalerer fint overalt. */
+
+.mk-slot { display: block; }
+
+.mk {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
+}
+.mk-bar {
+  display: flex; align-items: center; gap: 1.2cqw;
+  height: 6.5cqw; padding: 0 2.4cqw;
+  background: rgba(0, 0, 0, .07);
+}
+.mk-bar i { width: 1.7cqw; height: 1.7cqw; border-radius: 50%; background: rgba(0, 0, 0, .25); }
+.mk-screen { font-size: 3.3cqw; padding: 0 1.2em; }
+.mk-nav { display: flex; align-items: center; gap: 1.1em; padding: .85em 0; }
+.mk-logo { margin-right: auto; font-size: 1.15em; letter-spacing: -.01em; }
+.mk-nav span { font-size: .8em; opacity: .7; }
+.mk-btn {
+  display: inline-block; font-style: normal; font-weight: 700; font-size: .8em;
+  background: var(--ac); color: #fff; padding: .45em 1em; border-radius: 99px; white-space: nowrap;
+}
+.mk-hero { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1em; align-items: center; padding: .5em 0 1em; }
+.mk-copy small { display: block; font-size: .68em; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ac); }
+.mk-copy h4 { margin: .25em 0 .3em; font-size: 2em; line-height: 1.04; letter-spacing: -.02em; }
+.mk-copy p { margin: 0 0 .9em; font-size: .82em; line-height: 1.4; opacity: .8; }
+.mk-art svg { display: block; width: 100%; height: auto; }
+.mk-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7em; }
+.mk-cards div { background: rgba(255, 255, 255, .6); border-radius: .6em; padding: .65em .7em; }
+.mk-cards b { display: block; font-size: .88em; }
+.mk-cards span { font-size: .68em; opacity: .7; }
+
+/* Temaer */
+.mk-frisor { font-family: Georgia, "Times New Roman", serif; }
+.mk-frisor .mk-copy h4 { font-weight: 600; }
+.mk-frisor .mk-btn { font-family: system-ui, sans-serif; }
+
+.mk-rorlegger .mk-nav { background: var(--fg); color: #fff; margin: 0 -1.2em; padding: .85em 1.2em; }
+.mk-rorlegger .mk-hero { padding-top: 1em; }
+.mk-rorlegger .mk-copy h4 { font-weight: 900; text-transform: uppercase; font-size: 1.8em; letter-spacing: -.01em; }
+.mk-rorlegger .mk-btn { border-radius: .3em; }
+
+.mk-kafe { font-family: Georgia, "Times New Roman", serif; }
+.mk-kafe .mk-copy h4 { font-style: italic; font-weight: 700; }
+.mk-kafe .mk-cards div { border: 1px dashed rgba(58, 36, 21, .35); background: transparent; }
+
+.mk-snekker .mk-copy h4 { font-weight: 800; }
+.mk-snekker .mk-cards div { border-left: .3em solid var(--ac); border-radius: .2em; }
+.mk-snekker .mk-btn { border-radius: .25em; }
+
+/* "Eksempel"-merke som kan legges over en mockup */
+.mk-tag {
+  position: absolute; top: .6rem; right: .6rem; z-index: 3;
+  font: 700 .7rem/1 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+  background: #111; color: #fff; padding: .35rem .55rem; border-radius: 99px;
+}
+
+/* ---- Wireframe-versjon (brukes av den kreative varianten) ---- */
+.mk-stack { position: relative; --p: 1; }
+.mk-stack .mk-lf {
+  position: absolute; inset: 0;
+  clip-path: inset(0 calc((1 - var(--p)) * 100%) 0 0);
+}
+.mk-scan {
+  position: absolute; top: 0; bottom: 0; z-index: 2; width: 3px;
+  left: calc(var(--p) * 100%); background: #2F3BFF;
+  box-shadow: 0 0 12px rgba(47, 59, 255, .7);
+  opacity: 0; pointer-events: none;
+}
+.mk-stack.scanning .mk-scan { opacity: 1; }
+
+.mk.wire { background: #E9E6DB !important; color: transparent; font-family: ui-monospace, Menlo, monospace !important; }
+.mk.wire * {
+  color: transparent !important; background: none !important; box-shadow: none !important;
+  border-color: transparent !important; border-radius: 3px !important;
+  outline: 1px dashed #8d8878; outline-offset: -1px;
+}
+.mk.wire .mk-bar { background: #d8d4c6 !important; }
+.mk.wire .t { background: #cdc8b6 !important; outline: none; }
+.mk.wire .mk-art { background:
+  linear-gradient(to top right, transparent calc(50% - .6px), #8d8878 50%, transparent calc(50% + .6px)),
+  linear-gradient(to top left, transparent calc(50% - .6px), #8d8878 50%, transparent calc(50% + .6px)) !important; }
+.mk.wire .mk-art svg { visibility: hidden; }
+.mk.wire .mk-cards div { background: none !important; }
