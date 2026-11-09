@@ -63,7 +63,7 @@
     </linearGradient>
     <linearGradient id="tailFade" x1="0" y1="340" x2="0" y2="462" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff"/>
-      <stop offset="0.7" stop-color="#fff"/>
+      <stop offset="0.88" stop-color="#fff"/>
       <stop offset="1" stop-color="#000"/>
     </linearGradient>
     <mask id="tailMask" maskUnits="userSpaceOnUse" x="180" y="330" width="320" height="140">
@@ -535,16 +535,17 @@
       <!-- ===== YORUCHI ===== -->
       <!-- Hale av lysstriper -->
       <g mask="url(#tailMask)" fill="none" stroke-linecap="round">
-        <path d="M 311 340 C 325.4 386, 266 394, 270.2 428 C 272.4 450, 295.6 446, 296.4 466" stroke="#FFB5C8" stroke-width="7.5"/>
-        <path d="M 311 340 C 325.4 386, 266 394, 270.2 428 C 272.4 450, 295.6 446, 296.4 466" stroke="#fff" stroke-width="1.6" opacity="0.7"/>
-        <path d="M 323 340 C 330.2 386, 284 394, 290.6 428 C 295.2 450, 320.8 446, 325.2 466" stroke="#FFE49A" stroke-width="7.5"/>
-        <path d="M 323 340 C 330.2 386, 284 394, 290.6 428 C 295.2 450, 320.8 446, 325.2 466" stroke="#fff" stroke-width="1.6" opacity="0.7"/>
-        <path d="M 335 340 C 335 386, 302 394, 311 428 C 318 450, 346 446, 354 466" stroke="#BDEFD8" stroke-width="7.5"/>
-        <path d="M 335 340 C 335 386, 302 394, 311 428 C 318 450, 346 446, 354 466" stroke="#fff" stroke-width="1.6" opacity="0.7"/>
-        <path d="M 347 340 C 339.8 386, 320 394, 331.4 428 C 340.8 450, 371.2 446, 382.8 466" stroke="#A8D8FF" stroke-width="7.5"/>
-        <path d="M 347 340 C 339.8 386, 320 394, 331.4 428 C 340.8 450, 371.2 446, 382.8 466" stroke="#fff" stroke-width="1.6" opacity="0.7"/>
-        <path d="M 359 340 C 344.6 386, 338 394, 351.8 428 C 363.6 450, 396.4 446, 411.6 466" stroke="#D9C8F0" stroke-width="7.5"/>
-        <path d="M 359 340 C 344.6 386, 338 394, 351.8 428 C 363.6 450, 396.4 446, 411.6 466" stroke="#fff" stroke-width="1.6" opacity="0.7"/>
+        <g filter="url(#soft)" opacity="0.8">        <path d="M 311 340 C 325.4 386, 266 394, 270.2 428 C 272.4 450, 295.6 446, 296.4 466" stroke="#FFB5C8" stroke-width="9.5"/>        <path d="M 323 340 C 330.2 386, 284 394, 290.6 428 C 295.2 450, 320.8 446, 325.2 466" stroke="#FFE49A" stroke-width="9.5"/>        <path d="M 335 340 C 335 386, 302 394, 311 428 C 318 450, 346 446, 354 466" stroke="#BDEFD8" stroke-width="9.5"/>        <path d="M 347 340 C 339.8 386, 320 394, 331.4 428 C 340.8 450, 371.2 446, 382.8 466" stroke="#A8D8FF" stroke-width="9.5"/>        <path d="M 359 340 C 344.6 386, 338 394, 351.8 428 C 363.6 450, 396.4 446, 411.6 466" stroke="#D9C8F0" stroke-width="9.5"/></g>
+        <path d="M 311 340 C 325.4 386, 266 394, 270.2 428 C 272.4 450, 295.6 446, 296.4 466" stroke="#FFB5C8" stroke-width="9.5"/>
+        <path d="M 311 340 C 325.4 386, 266 394, 270.2 428 C 272.4 450, 295.6 446, 296.4 466" stroke="#fff" stroke-width="2.2" opacity="0.85"/>
+        <path d="M 323 340 C 330.2 386, 284 394, 290.6 428 C 295.2 450, 320.8 446, 325.2 466" stroke="#FFE49A" stroke-width="9.5"/>
+        <path d="M 323 340 C 330.2 386, 284 394, 290.6 428 C 295.2 450, 320.8 446, 325.2 466" stroke="#fff" stroke-width="2.2" opacity="0.85"/>
+        <path d="M 335 340 C 335 386, 302 394, 311 428 C 318 450, 346 446, 354 466" stroke="#BDEFD8" stroke-width="9.5"/>
+        <path d="M 335 340 C 335 386, 302 394, 311 428 C 318 450, 346 446, 354 466" stroke="#fff" stroke-width="2.2" opacity="0.85"/>
+        <path d="M 347 340 C 339.8 386, 320 394, 331.4 428 C 340.8 450, 371.2 446, 382.8 466" stroke="#A8D8FF" stroke-width="9.5"/>
+        <path d="M 347 340 C 339.8 386, 320 394, 331.4 428 C 340.8 450, 371.2 446, 382.8 466" stroke="#fff" stroke-width="2.2" opacity="0.85"/>
+        <path d="M 359 340 C 344.6 386, 338 394, 351.8 428 C 363.6 450, 396.4 446, 411.6 466" stroke="#D9C8F0" stroke-width="9.5"/>
+        <path d="M 359 340 C 344.6 386, 338 394, 351.8 428 C 363.6 450, 396.4 446, 411.6 466" stroke="#fff" stroke-width="2.2" opacity="0.85"/>
       </g>
 
       <!-- Ermer av silkepapir (bak kroppen) -->
